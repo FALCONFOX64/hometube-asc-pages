@@ -16,37 +16,69 @@
 </head>
 <body>
   <h1>HomeTube Privacy Policy</h1>
-  <p class="muted">Effective September 22, 2026 · Matches the App Privacy Nutrition Labels and <code>PrivacyInfo.xcprivacy</code> shipped with HomeTube 1.0</p>
+  <p class="muted">Last updated October 19, 2026</p>
 
-  <p>This policy describes the HomeTube iOS / iPadOS app published under Apple Developer account <strong>caustin@me.com</strong> (bundle id <code>com.family.hometube</code>). It is only about the app on your device.</p>
+  <p>This policy describes the HomeTube iPadOS app published under Apple Developer account <strong>caustin@me.com</strong> (bundle id <code>com.family.hometube</code>). It covers the app on your device and the YouTube and Google services the app contacts when a caregiver links YouTube content.</p>
 
-  <h2>On-device only</h2>
-  <p>HomeTube keeps your library on this iPad (or iPhone). Imported videos are copied into the app’s Documents folder for offline playback. <strong>Nothing leaves the device</strong> for HomeTube features — there is no HomeTube cloud sync, no HomeTube account, and no HomeTube server that receives your videos or settings.</p>
+  <h2>Summary</h2>
+  <ul>
+    <li>Home videos you import, your settings, the caregiver PIN, and watch-time reports stay on this iPad. HomeTube has no cloud sync, no account, and no HomeTube server.</li>
+    <li>HomeTube itself has no analytics, no tracking, and does not sell or share your information.</li>
+    <li>If a caregiver links YouTube videos, channels, or playlists, the app contacts YouTube and Google and plays those videos in an embedded YouTube player. That player and Google operate under <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>, not this one, and embedded videos may include ads.</li>
+    <li>You can avoid YouTube and Google entirely by using only local home videos.</li>
+  </ul>
 
-  <h2>No accounts, analytics, or ads</h2>
+  <h2>What stays on this device</h2>
+  <p>HomeTube keeps your library on this iPad. The following are stored only on this device and are never sent to a HomeTube server:</p>
+  <ul>
+    <li><strong>Home videos.</strong> When a caregiver chooses Import, HomeTube reads a video you select from Apple Photos or the Files picker and copies that file into HomeTube’s local Documents storage for offline playback. The original stays where it was. HomeTube does not upload those files anywhere.</li>
+    <li><strong>Caregiver settings.</strong> Caregiver PIN, spoken-label preference, control layout bias, auto-stop minutes, and related flags are stored locally on the device (including Apple’s UserDefaults API). In Apple’s privacy manifest this is declared as accessed API category UserDefaults with reason <strong>CA92.1</strong> (app functionality).</li>
+    <li><strong>Watch-time reports.</strong> Watch-time totals shown to the caregiver are calculated and stored on the device only.</li>
+    <li><strong>YouTube Data API key.</strong> If a caregiver enters their own Google API key, it is stored in the device Keychain. It is sent only to Google’s YouTube Data API when the app looks up the content a caregiver has linked, and is never sent to a HomeTube server.</li>
+  </ul>
+  <p>There is no HomeTube cloud sync, no HomeTube account or sign-in, and no HomeTube server that receives your videos, settings, or reports.</p>
+
+  <h2>What involves YouTube and Google</h2>
+  <p>HomeTube uses <strong>YouTube API Services</strong>. A caregiver can link YouTube videos, channels, or playlists so they appear alongside home videos. When linked YouTube content is in the library, HomeTube connects to the following Google-operated services:</p>
+  <ul>
+    <li><code>youtube.com</code> and <code>youtube-nocookie.com</code> — to play linked videos in an embedded YouTube player.</li>
+    <li><code>googleapis.com</code> (YouTube Data API) — to look up titles, channel and playlist contents, and other details for linked content, using the caregiver’s API key.</li>
+    <li><code>i.ytimg.com</code> — to load video thumbnails.</li>
+  </ul>
+  <p>When the app makes these connections, Google receives the information any web request carries, such as your IP address and the video, channel, or playlist being requested.</p>
+  <p>By using the YouTube features in HomeTube you are also agreeing to be bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. Google’s handling of information is described in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+  <h2>Cookies, identifiers, and ads in the embedded player</h2>
+  <ul>
+    <li>The embedded YouTube player and Google may store or access cookies or similar identifiers on this device, and may collect device or usage data (such as what is played and for how long) under Google’s Privacy Policy. HomeTube does not control, read, or receive that data.</li>
+    <li>Loading the player from <code>youtube-nocookie.com</code> does not eliminate Google’s data collection during playback.</li>
+    <li>Embedded YouTube videos may include ads served by YouTube. HomeTube does not add ads of its own and has no control over the ads YouTube shows.</li>
+  </ul>
+
+  <h2>How to avoid YouTube and Google</h2>
+  <p>HomeTube works fully offline with home videos alone. To keep the app from contacting YouTube or Google:</p>
+  <ul>
+    <li>Use only videos imported from Photos or Files.</li>
+    <li>Do not link YouTube videos, channels, or playlists, and remove any linked YouTube content from the library in caregiver settings.</li>
+  </ul>
+  <p>With no linked YouTube content, HomeTube does not contact YouTube or Google.</p>
+
+  <h2>What HomeTube itself does not do</h2>
   <ul>
     <li>No user accounts or sign-in.</li>
-    <li>No advertising.</li>
-    <li>No analytics SDKs, advertising pixels, or tracking domains.</li>
+    <li>No analytics SDKs, advertising pixels, or tracking domains added by HomeTube.</li>
     <li><code>NSPrivacyTracking</code> is <strong>false</strong>. HomeTube does not track you across apps or websites owned by other companies.</li>
-    <li><code>NSPrivacyCollectedDataTypes</code> is empty — HomeTube does not collect personal data off the device for analysis, advertising, or sale.</li>
-  </ul>
-
-  <h2>Photos and Files import</h2>
-  <p>When a caregiver chooses Import, HomeTube reads a video you select from Apple Photos or the Files picker and copies that file into HomeTube’s local Documents storage. The original stays where it was. HomeTube does not upload those files.</p>
-
-  <h2>PIN and caregiver settings (local)</h2>
-  <p>Caregiver PIN, spoken-label preference, control layout bias, auto-stop minutes, and related flags are stored locally on the device (including Apple’s UserDefaults API). In Apple’s privacy manifest this is declared as accessed API category UserDefaults with reason <strong>CA92.1</strong> (app functionality). These settings are not sent to a HomeTube server.</p>
-
-  <h2>What we do not do</h2>
-  <ul>
+    <li>HomeTube does not collect personal data off the device for analysis, advertising, or sale.</li>
     <li>We do not sell, rent, or trade your information.</li>
     <li>We do not use your videos for advertising or profiling.</li>
-    <li>We do not require an internet connection for core playback after videos are imported.</li>
+    <li>We do not require an internet connection for playback of imported home videos.</li>
   </ul>
 
+  <h2>Changes to this policy</h2>
+  <p>If HomeTube’s behavior changes, this page will be updated and the date at the top will change.</p>
+
   <h2>Contact</h2>
-  <p>Questions about this policy: <a href="mailto:caustin@me.com">caustin@me.com</a></p>
+  <p>Questions about this policy: <a href="mailto:hello@austinzierke.com">hello@austinzierke.com</a></p>
   <p><a href="../">Back to HomeTube Support</a></p>
 </body>
 </html>
